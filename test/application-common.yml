@@ -1,0 +1,28 @@
+# eureka配置
+eureka:
+  instance:
+    hostname: 192.168.90.115
+    port: 8001
+    statusPageUrlPath: /swagger-ui.html
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+
+#database
+common:
+  datasource:
+    type: mysql
+    host: 192.168.90.115
+    port: 3306
+    username: root
+    password: root
+#rabbitmq
+  rabbitmq:
+    host: 192.168.90.118
+    port: 5672
+    username: guest
+    password: guest
+
+#redis nodes: host&port
+  redis:
+    nodes: 192.168.90.115,7001 & 192.168.90.115,7002 & 192.168.90.115,7003 & 192.168.90.115,7004 & 192.168.90.115,7005 & 192.168.90.115,7006
